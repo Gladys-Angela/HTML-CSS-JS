@@ -25,11 +25,11 @@ button {
     color: #016f32;
     font-weight: bold;
     width: 150px;
-    height: 50px;
+    padding: 5px;
     border-radius: 2px;
-    margin-bottom: 2px;
-    margin-top: 2px;
+    margin: 5px auto; /* Centers the button */
+    display: block; /* Makes each button take its own line */
+}
+
     
 
-
-}
