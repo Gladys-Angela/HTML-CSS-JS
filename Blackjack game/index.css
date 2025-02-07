@@ -5,6 +5,7 @@ body{
     text-align: center;
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
 
 h1 {
@@ -13,5 +14,18 @@ h1 {
 
 #message-el{
     font-style: italic;
+    
+
+}
+button {
+    background-color: goldenrod;
+    border: none;
+    text-align: center;
+    color: #016f32;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    border-radius: 2px;
+
 
 }
