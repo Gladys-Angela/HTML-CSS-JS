@@ -1,4 +1,4 @@
-//startGame() Function (with the conditions below)
+//renderGame() Function (with the conditions below)
 //create two variables, firstCard and secondCard
 //Set their values to a random number between 2-11
 //create a variable, sum, and set it to the sum of the two cards
@@ -12,17 +12,28 @@
 //Render the sum on the page using this format = "Sum: 14"
 //store the cards paragraph in a variable called cardsEl
 //Render the cars on the page using this format = "Cards: 10 4"
-let cardsEl = document.getElementById("cards-el")
-let sumEl = document.getElementById("sum-el")
-let messageEl = document.getElementById("message-el")
+//creating an array of cards
 let firstCard = 10
 let secondCard = 10
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard 
 let hasBlackJack = false
 let isAlive = true
 let message = ""
+let cardsEl = document.getElementById("cards-el")
+let sumEl = document.getElementById("sum-el")
+let messageEl = document.getElementById("message-el")
+// create a new function called startGame() that calls renderGame()
+function startGame(){
+    renderGame()
+}
 
-function startGame() {
+
+
+function renderGame() {
+    messageEl.textContent = message
+    sumEl.textContent = "Sum: " + sum
+    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
     if (sum <= 20) {
         message = "Do you want to draw a new card😊"
         
@@ -39,9 +50,7 @@ function startGame() {
     //console.log(hasBlackJack)
     //console.log(isAlive)
     //console.log(message)
-    messageEl.textContent = message
-    sumEl.textContent = "Sum: " + sum
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    
 }
  //create a function newCard() that logs out "Drawing a new card"
 
@@ -52,8 +61,14 @@ function startGame() {
     //call startGame()
     let card = 6
     sum += card
-    startGame()
+    //push the card to the cards array
+    cards.push(card)
+    console.log(cards)
+
+
+    renderGame()
     
+
 
  }
  
