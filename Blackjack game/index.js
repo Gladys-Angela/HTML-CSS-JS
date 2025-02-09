@@ -13,8 +13,9 @@
 //store the cards paragraph in a variable called cardsEl
 //Render the cars on the page using this format = "Cards: 10 4"
 //creating an array of cards
-let firstCard = 10
-let secondCard = 10
+//use getRandomCard() to set the values of firstCard and secondCard
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard 
 let hasBlackJack = false
@@ -23,12 +24,17 @@ let message = ""
 let cardsEl = document.getElementById("cards-el")
 let sumEl = document.getElementById("sum-el")
 let messageEl = document.getElementById("message-el")
+//create a function, getRandomCard(), return number between 1 and 13
+
+function getRandomCard() {
+    return Math.floor(Math.random() * 13) + 1
+    
+}
+
 // create a new function called startGame() that calls renderGame()
 function startGame(){
     renderGame()
 }
-
-
 
 function renderGame() {
     messageEl.textContent = message
@@ -65,7 +71,7 @@ function renderGame() {
     //create a variable , and hard code its value to a number(2-11)
     //add the new card to the sum variable
     //call startGame()
-    let card = 6
+    let card = getRandomCard()
     sum += card
     //push the card to the cards array
     cards.push(card)
