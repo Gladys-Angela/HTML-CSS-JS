@@ -14,18 +14,23 @@
 //Render the cars on the page using this format = "Cards: 10 4"
 //creating an array of cards
 //use getRandomCard() to set the values of firstCard and secondCard
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard 
+
+let cards = []
+let sum = 0 
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let cardsEl = document.getElementById("cards-el")
 let sumEl = document.getElementById("sum-el")
 let messageEl = document.getElementById("message-el")
-//create a function, getRandomCard(), return number between 1 and 13
+let player = {
+    name: "Gladys",
+    chips: 160
+}
 
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
+//create a function, getRandomCard(), return number between 1 and 13
 function getRandomCard() {
     //if 1 = return 11
     //if 11-13 = return 10
@@ -43,18 +48,25 @@ function getRandomCard() {
 
 // create a new function called startGame() that calls renderGame()
 function startGame(){
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+    
+
     renderGame()
 }
 
 function renderGame() {
-    messageEl.textContent = message
-    sumEl.textContent = "Sum: " + sum
+    
     cardsEl.textContent = "Cards: "
     //create a for loop that renders out all the cards instead of just two
     for (i= 0; i< cards.length; i++){
         cardsEl.textContent += cards[i] + " "
 
     }
+    sumEl.textContent = "Sum: " + sum
 
     if (sum <= 20) {
         message = "Do you want to draw a new card😊"
@@ -63,34 +75,30 @@ function renderGame() {
         message ="You got blackjack 🥳"
         hasBlackJack = true
         
-    } else{
+    } else {
         message ="You're out of the game😥"
         isAlive = false
         
     }
 
-    //console.log(hasBlackJack)
-    //console.log(isAlive)
-    //console.log(message)
+    messageEl.textContent = message
+    
     
 }
  //create a function newCard() that logs out "Drawing a new card"
 
- function newCard(){
-    console.log("Drawing a new card")
+function newCard(){
+    
     //create a variable , and hard code its value to a number(2-11)
     //add the new card to the sum variable
     //call startGame()
-    let card = getRandomCard()
-    sum += card
-    //push the card to the cards array
-    cards.push(card)
-    console.log(cards)
-
-
-    renderGame()
+    //Only allow the player to get a new card id she is Alibve and does not have blackkack
+    if (isAlive === true && hasBlackJack === false){
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()
     
-
-
- }
- 
+    }
+    
+} 
