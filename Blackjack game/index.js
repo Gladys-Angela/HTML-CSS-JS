@@ -62,7 +62,7 @@ function renderGame() {
     
     cardsEl.textContent = "Cards: "
     //create a for loop that renders out all the cards instead of just two
-    for (i= 0; i< cards.length; i++){
+    for (i= 0; i < cards.length; i++){
         cardsEl.textContent += cards[i] + " "
 
     }
