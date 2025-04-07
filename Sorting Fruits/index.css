@@ -1,0 +1,22 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+#apple-shelf, #orange-shelf {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 10px auto;
+}
+
+#apple-shelf{
+    background-color: #ec6c63 /* reddish pink */
+
+}
+#orange-shelf{
+    background-color: #f99b58; /* orange peach */
+
+}
