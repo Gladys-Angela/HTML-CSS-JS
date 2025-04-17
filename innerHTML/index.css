@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#container{
+    margin: 50px 200px;
+}
+button{
+    background: red;
+    color:white;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+    
+
+}
