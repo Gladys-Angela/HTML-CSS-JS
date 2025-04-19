@@ -1,0 +1,29 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: whitesmoke;
+    text-align: center;
+    color: #130e0f;
+}
+h1{
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+#container {
+    width: 100%;
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;       /* Ensures the image fills the circle without distortion */
+    border-radius: 50%;      /* Creates a perfect circle */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.team-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
